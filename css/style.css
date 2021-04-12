@@ -1,521 +1,431 @@
-@font-face{
-    font-family: avenir;
-    src: url(fonts/Avenir-Medium.ttf);
-}
-
+/* Import Nunito Sans font from google */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-    /* Colors */
-    --grey-800: #424242;
-    --grey-600: #757575;
-    --grey-400: #bdbdbd;
-    --grey-300: #E0E0E0;
-    --grey-100: #f5f5f5;
-    --red-a700: #d50000;
+    /* Color valriables */
+    --prim-green: #8eaf04;
+    --dark-grey: #424143;
+    --medium-grey: #8f8f8f;
+    --grey: #bdbdbd;
+    --light-grey: #f5f5f5;
+    --beige: #cbac81;
+    --light-beige: #e4cba8;
+    --transparent: rgba(0, 0, 0, 0);
+    --transparent-white: rgba(255, 255, 255, 0.5);
 
-    /* Borders */
-    --out-line: 1px solid #424242;
-
-    /* Shadows */
-    --mid-shadow:  .2rem .2rem 1rem 0 rgba(0, 0, 0, .25);
-    --light-shadow:  0 .1rem .5rem 0 rgba(0, 0, 0, .05);
+    /* Space and size */
+    --xs: 0.4rem;
+    --sm: 1rem;
 }
 
-*{
-   margin :0px;
-   padding:0px;
-   box-sizing: border-box;
-}
-
-/* Reset page font size, 1rem = 16px */
-html body{
-    font-size: 16px;
-    font-family:'avenir';
-    background-color: var(--grey-100);
-}
-html {
-    position: relative;
-    min-height: 100%;
-}
-body {
-    color: #424143;
-    font-family: 'avenir';
-    background-color: #f6f6f6;
-    letter-spacing: 1px!important;
-}
-
-/* Layout */
-
-section {
-    max-width: 1000px;
-    margin: 0rem auto 0;
-    display: flex;
-    display: -ms-flexbox;
-    padding: 0rem 1rem;
-}
-
-/* Headers */
-
-/* Typography */
-h4.title-sent{
-	font-size: 19px;
-	color: #424143;
-    font-weight: bold;
-    display: inline;
-}
-
-
-.tag{
-    display: inline-block;
-    color: white;
-    background-color: #E04C4C;
-    border-radius: 99px;
-    padding: 0.25rem 0.75rem;
-    margin-left: 1rem;
-}
-/* Links */ 
-
-button {
-    display: inline-block;
-    border: none;
-    border-radius: 4px;
-    padding: 0.75rem 0.75rem;
+/* Globally set font, box-size; reset margin / paddings */
+* {
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
     margin: 0;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
-    color: white;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: transform 150ms ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    padding: 0;
+    color: var(--dark-grey);
+    /* scrollbar-width: thin; */
+    /* scrollbar-color: red orange; */
+}
+*::-webkit-scrollbar {
+    /* CSS variable doesn't wrok here */
+    width: 1rem;
+}
+*::-webkit-scrollbar-track {
+    background: var(--transparent);
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--grey);
+    border-radius: 99px;
+    border: 4px solid transparent;
+    background-clip: content-box;
 }
 
-button:hover, button:focus, button:active{
-    outline: none;
+html {
+    font-size: 16px; /* Define rem as 16px */
 }
 
-.btn-round{
-    width: 9rem;
-    height: 9rem;
-    border-radius: 5rem;
+p {
+    margin: 0.6rem 0;
+}
 
-    margin: .5rem auto;
-    background-color:var(--grey-800);
-    box-shadow: var(--mid-shadow);
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+header {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    border:none;
-}
-.btn-round:focus{
-    background-color:var(--grey-600);
-}
-
-.btn-round:hover{
-    background-color:var(--grey-600);
-}
-
-.btn-round:after{
-    content: ' ';
-    width: 6rem;
-    height: 6rem;
-    border-radius: 4rem;
-    display: block;
-    position: relative;
-    border: 1px solid white;
-    z-index: 20;
-}
-.loading-spinner{
-    position: absolute!important;
-    top: 50%;
-    background: none;
-    text-align: center;
-    display: none;
-    left: 50%;
-    width: auto!important;
-    margin-top: -30px;
-    margin-left: -30px;
-    z-index: 2;
-    
-}
-.loader-img{
-    width: 60px;
-    height: 60px;
-    opacity: .3;
-}
-button.solid{
-    color: white;
-    background-color: var(--grey-800);
-}
-
-button.solid:hover{
-    color: white;
-    background-color: var(--grey-600);
-}
-
-button.outline{
-    color: var(--grey-800);
-    border: var(--out-line);
-    background-color: white;
-}
-
-button.outline:hover{
-    background-color: var(--grey-300);
-}
-
-/* Images */
-
-/* Forms */
-
-/* Tables */
-
-/* Quotes */
-
-/* Alignment */
-section .align-center{
-    text-align: center;
-    margin: 0 auto;
-}
-
-
-/* Custom styles */
-
-footer{
-    background-color: white;
-    color: #424143;
-}
-
-footer a{
-    color: #7A7A7B;
-}
-
-.footer-section{
     justify-content: space-between;
-    -ms-flex-pack: justify;
-    padding: 2rem 1rem;
-    padding-top: 3rem;
+    align-items: center;
+}
+header .description {
+    width: 70%;
+    padding-right: 1rem;
+}
+/* Table screen */
+@media screen and (max-width: 690px) {
+    header {
+        flex-direction: column;
+    }
+    header .description {
+        width: 100%;
+    }
+}
+header .description sup.tag {
+    padding: 0.4rem 0.6rem 0.3rem;
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: normal;
+    color: white;
+    background-color: #b71c1c;
+    border-radius: 999px;
 }
 
-.footer-logo{
-    /* display: flex;
-    display: -ms-flexbox; */
-    align-items: center;
-    margin-left: 1rem;
-}
- .intro-btns {
+header aside {
+    display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    justify-content: center;
 }
-@media screen and (max-width: 769px){
-.intro-btns {
+@media screen and (max-width: 690px) and (min-width: 360px) {
+    header aside {
+        flex-direction: row;
+    }
+}
+/* [More Info] and [Demo app code] buttons */
+header aside a {
+    margin: 0.4rem;
+    width: 180px;
+    padding: 0.4rem;
+    border-radius: 0.4rem;
+    text-align: center;
+    text-decoration: none;
+}
+
+main {
+    padding: 3rem;
+    min-height: calc(100vh - 10rem);
+    background: var(--light-grey) url('../img/bg-waveline.png') no-repeat center
+        bottom;
+    background-size: 100%;
+}
+@media screen and (max-width: 360px) {
+    main {
+        padding: 1rem;
+    }
+}
+main > section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* *********************************** */
+/* Styles for Main Demo App Functions  */
+/* *********************************** */
+main > section form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+main > section form input {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: 0 var(--xs);
+}
+
+#langSelectorSection {
+    margin-top: 5rem !important;
+}
+#langSelectorSection,
+#modelSelectorSection {
+    width: 440px;
+    margin: 0.6rem 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#langSelectorSection form {
+    margin: 0 var(--sm);
+}
+@media screen and (max-width: 440px) {
+    #langSelectorSection {
+        margin-top: 2rem !important;
+    }
+    #langSelectorSection,
+    #modelSelectorSection {
+        width: 100%;
+        flex-direction: column;
+    }
+}
+#langSelectorSection p,
+#modelSelectorSection label {
+    text-align: center;
+    margin: var(--sm) 0;
+}
+
+#modelSelectorSection select {
+    font-size: 1rem;
+    outline: var(--dark-grey); /** Override browser default style */
+}
+#modelSelectorSection small {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    color: var(--medium-grey);
+    text-align: center;
+    font-style: italic;
+}
+
+#startRecordingSection {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#transResultSection {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    max-width: 600px;
+    height: 27vh;
+    margin-top: 2rem;
+    padding: 0 var(--xs);
+    overflow-y: scroll;
+}
+@media screen and (max-width: 440px) {
+    #transResultSection {
+        height: 37vh;
+    }
+}
+
+#transResultSection div {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    margin-bottom: var(--xs);
+    background-color: var(--transparent-white);
+    box-shadow: 0.2rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+#transResultSection div span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem;
+    color: white;
+    background-color: var(--light-beige);
+}
+#transResultSection div p {
+    margin: 0.5rem 1rem;
+}
+#transResultSection .loader {
+    position: relative;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    display: flex;
+
+    width: 130px;
+    margin: var(--xs) auto;
+    box-shadow: none;
+
+    background: url(../img/loading.gif) no-repeat left center;
+    background-size: 1.4rem;
     text-align: center;
 }
-.intro-btns div {
-    display: inline-block;
+#transResultSection .loader::after {
+    content: 'Transcribing ...';
 }
-}
-.btn-outline {
-    margin: .5rem;
-    border: 1px solid #424143;
-    color: #424143;
-    min-width: 160px;
-    background-color: #ffffff;
-    transition: background-color 450ms ease;
-}
-.btn-solid {
-    margin: .5rem;
-    color: #dfdfdf;
-    min-width: 160px;
-    background-color: #424143;
-    transition: background-color 450ms ease;
-}
-label{
-         font-weight: normal;
-}
-.container-radio {
-    display: inline-block;
-    position: relative;
-    margin-right: 1rem;
-    /* padding-left: 1.5rem;
-    margin-bottom: .25rem; */
-    padding-left: 25px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+
+#voiceRecorderSection {
+    margin-top: 2rem;
+    flex-direction: column;
+    align-items: center;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none;
-    
-
 }
 
-.checkmark {
-    position: absolute;
-    top: 3px;
-    left: 0;
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    border: var(--out-line);
+#voiceRecorderSection button.green {
+    width: 5rem;
+    height: 5rem;
+    margin: 0.5rem;
+    border-radius: 999px;
 }
-
-.container-radio .checkmark:after {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--grey-800);
-}
-
-.container-radio input:checked ~ .checkmark:after {
-    display: block;
-}
-
- /* Customized styling of radio selection */
-
-.checkmark:after {
-    position: absolute;
-    display: none;
-    top: 3px;
-    left: 3px;
-    content: "";
-}
-
-.container-radio input {
-    /* position: absolute; */
-    opacity: 0;
-    cursor: pointer;
-}
-
-.asr-btn-record{
-    /* background-image: url('../img/keyboard_voice-24px.png'); */
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.asr-btn-disable{
-    background-color: var(--grey-600);
-    /* background-image: url('../img/keyboard_voice-24px.png'); */
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: not-allowed;}
-.fa-microphone{
-    position: absolute;
-    /* font-size: 1.3rem */
-     font-size: 2rem 
-    
-}
-.asr-btn-disable:hover i{
-    background-color:var(--grey-600);
-    color: #afadad;
-}
-/* Animation while holding the recording button */
- .asr-btn-disable::after{
-    content: ' ';
-    width: 4rem;
-    height: 4rem;
-    border-radius: 3rem;
-    display: block;
-    position: relative;
-    border: 4px solid white;
-    z-index: 20;
-    animation: recording 4s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes recording {
-    0%{
-        border: 2px solid rgba(255,255,255,.1);
-        width: 4rem;
-        height: 4rem;
+@keyframes circleBaseBounce {
+    0% {
+        width: 5rem;
+        height: 5rem;
+        margin: 0.5rem;
     }
     50% {
-        border: 2px solid rgba(255,255,255,.5);
         width: 6rem;
         height: 6rem;
+        margin: 0rem;
     }
-    100%{
-        border: 2px solid rgba(255,255,255,.1);
-        width: 4rem;
-        height: 4rem;
+    100% {
+        width: 5rem;
+        height: 5rem;
+        margin: 0.5rem;
     }
 }
-/****/
-
-.asr-result div{
-    width: 100%;
-    position: relative;
+#voiceRecorderSection button.green:active {
+    animation: circleBaseBounce 2s ease-out infinite;
 }
-    .count {
-        position: absolute;
-        left: -2rem;
-        color: #bdbdbd;
+@keyframes circleInnerBounce {
+    0% {
+        padding: 0.6rem;
         font-size: 2.5rem;
-        top: 0;
     }
-/* Mobile Responsive */
-
-
-@media screen and (max-width : 768px) {   
-
-    footer section{
-      display: block;
+    50% {
+        padding: 1.05rem;
+        font-size: 2.8rem;
     }
-
-    .footer-logo{
-      /* padding-top: 2rem; */
-      justify-content: center;
-      -ms-flex-pack: justify;
+    100% {
+        padding: 0.6rem;
+        font-size: 2.5rem;
     }
-    
+}
+#voiceRecorderSection button.green:active span {
+    animation: circleInnerBounce 2s ease-out infinite;
+}
+#voiceRecorderSection button.green span {
+    padding: 0.6rem;
+    border-radius: 999px;
+    border: white 2px solid;
+    color: white;
+    font-size: 2.5rem;
+}
+/* -END- Styles for Main Demo App Functions  */
+/* ***************************************** */
+
+/** 
+* All direct child of main and footer element 
+* Set the max content witdh.
+*/
+main > *,
+footer section {
+    max-width: 1200px;
+    margin: auto;
+}
+
+footer {
+    padding: 0 3rem;
+    box-shadow: 0 0rem 1rem rgba(0, 0, 0, 0.1);
+    background: white;
+}
+@media screen and (max-width: 360px) {
+    footer {
+        padding: 0 1rem;
     }
-    
-
-/** out put area test **/
-.bg-fade{
-    padding: 1rem;
-    text-align: center;
-    background-color: #808081;
-    color:#fff;
 }
-.time-right {
-    color: #747474;
-    float: right;
-}
-
-.outputcontainerblue:hover{
-    background-color: var(--grey-300);
-}
-
-.outputcontainerblue {
-    border: none;
-    background-color: var(--grey-100);
-    border-radius: 5px;
-    padding: 10px;
-    font-weight: 600;
-    margin-bottom: 8px;
-    width: calc(100% - 3rem);
-    word-break: break-word;
-    color: #808081;
-    font-weight: normal;
-    float:right !important;
-    color: var(--grey-800);
-    z-index: 1;
-}
-
-.asrBox{
-	overflow: auto;
-	height: 370px;
-	border-radius: 3px;
-	padding: 1rem 1rem 1rem 3rem;
-	background: #ffffff;
-	box-shadow: var(--light-shadow)
-}
-
-/* ---------------------------------- */
-.mt-3{
-    margin-top: 3rem;
-}
-.mt-2{
-    margin-top: 3rem;
-}
-.mt-5{
-    margin-top: 5rem;
-}
-.mt-4{
-    margin-top: 4rem;
-}
-.p-1 {
-    padding: 1rem;
-}
-.p-2{
-    padding: 2rem;
-}
-.back-to-home a {
-    cursor: pointer;
-    text-decoration: none;
-    color: #424143;
-}
-.CF-support{
-    background-image: url(../img/demo-app-bg-waveline.png);
-    background-repeat: no-repeat;
-    margin: 0;
-    background-size: contain;
-    /* min-height: calc(100vh - 104px); */
-    background-position: bottom;
+footer section {
+    height: 100%;
+    min-height: 10rem;
+    padding: 2rem 0;
     display: flex;
-    flex-direction: column;
-    /* min-height: 100vh; */
- }
- .container-flex{
-    flex: 1 1 0;
- }
- @media screen and (max-width: 991px) {
-    .footer-section{
+    justify-content: space-between;
+    align-items: center;
+}
+@media screen and (max-width: 690px) {
+    footer section {
         flex-direction: column;
-        flex-flow: column;
-        text-align: center;
-        display: flex;      
     }
-    .footer-logo {
-        display: flex;
-        display: -ms-flexbox;
-        align-items: center;       
-        text-align: center;
-        display: block;
-        /* margin: 2rem auto; */
-        margin: 0 auto;
-        padding-bottom: 1rem;
-    }
-
-  }
-   
- @media screen and (max-width : 768px) {
-     
-     
-    body{
-        background-size: 200%;
-        background-position-x: right;
-        }
-    
-        footer section{
-          display: block;
-        }
-    
-        .footer-logo{
-          /* padding-top: 2rem; */
-          justify-content: center;
-          -ms-flex-pack: justify;
-        }
-        
-        }
-@media (min-width: 1200px){
-.footer-section{
-max-width:1170px
 }
+footer section address {
+    font-style: normal;
+}
+footer .logo {
+    max-width: 260px;
+}
+footer a {
+    color: var(--beige);
+}
+footer a:hover {
+    filter: brightness(0.8);
 }
 
-@media (min-width: 992px){
-.footer-section{
-    max-width: 970px;
-  }
-}
+/* Buttons */
 
-/* @media (min-width: 768px) {
-.footer-section{
-    max-width: 750px;
-  }
-} */
-.content{	
+button {
     display: flex;
-    flex-direction: column;
-    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    width: 160px;
+    height: 48px;
+    margin: var(--xs);
+    padding: 0.6rem;
+    border-radius: 0.4rem;
+
+    font-size: 1rem;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
 }
-.flex-fill{
-    flex: 1 1 auto;
+button:focus {
+    outline: none;
+}
+button:hover {
+    filter: brightness(0.8);
+}
+button.green {
+    transition: all 0.3s;
+    border: none;
+    background-color: var(--prim-green);
+    color: white;
+}
+button.green:hover {
+    filter: brightness(1.1);
+}
+button.green:active {
+    filter: brightness(0.9);
+}
+button.green span {
+    color: white;
+}
+
+button.button-restart,
+button.button-restart span {
+    border: none;
+    background: none;
+    color: var(--medium-grey);
+    padding: var(--xs);
+}
+button.button-restart {
+    margin-top: 2rem;
+}
+
+.more-info {
+    border: 1px solid var(--dark-grey);
+    background-color: var(--light-grey);
+}
+.more-info:hover {
+    filter: brightness(0.95);
+}
+
+.demo-app-code {
+    color: white;
+    border: 1px solid var(--dark-grey);
+    background-color: var(--dark-grey);
+}
+.demo-app-code:hover {
+    filter: brightness(1.3);
+}
+
+.hov-red:hover {
+    color: red;
+}
+
+.mr-sm {
+    margin-right: var(--sm);
+}
+
+.text-center {
+    text-align: center;
 }
